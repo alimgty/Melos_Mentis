@@ -88,9 +88,9 @@
 
 ## 👨‍💻 Contributors
 
-- **Nikita Chaudhary** – [GitHub](https://github.com/nikitac22)  
-- **Shiven Rastogi**  
-- **Divyanshu Rajoria**
+- **Nikita Chaudhary** – [GitHub](https://github.com/0Nikki0)  
+- **Shiven Rastogi**  - [GitHub](https://github.com/Shivenrastogi59)
+- **Divyanshu Rajoria** - [GitHub](https://github.com/alimgty)
 
 ---
 
