@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Melos-Mentis</title>
+    <link rel="icon" type="image/png" href="static/assets/images/favicon.png" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div id="navbar">
+      <a class="title" href="#"> Melos-Mentis </a>
+      <ul class="nav-links">
+        <li><a href="#Home-Page" class="nav-link active">Home</a></li>
+        <li><a href="#Product-Page" class="nav-link">Product</a></li>
+        <li><a href="#About-Page" class="nav-link">About us</a></li>
+        <li>
+          <a href="#" class="icon"
+            ><img src="{{ url_for('static', filename='assets/images/notifyicon.svg') }}"
+          /></a>
+        </li>
+        <li>
+          <a href="#" class="icon"
+            ><img src="{{ url_for('static', filename='assets/images/profileicon.svg') }}"
+          /></a>
+        </li>
+      </ul>
+    </div>
+
+    <section id="Home-Page">
+      <div id="home">
+        <div class="home-content">
+          <h1>MELOS-MENTIS</h1>
+          <p>AI-POWERED MUSIC THERAPY</p>
+          <button id="getStarted">GET STARTED</button>
+        </div>
+        <div class="home-image">
+          <img id="bg2" src="{{ url_for('static', filename='assets/images/homeboybg2.svg') }}" alt="home-image" />
+          <img id="bg1" src="{{ url_for('static', filename='assets/images/homeboybg1.svg') }}" alt="home-image" />
+          <img id="bg3" src="{{ url_for('static', filename='assets/images/homeboybg3.svg') }}" alt="home-image" />
+          <img id="boy" src="{{ url_for('static', filename='assets/images/homeboy.svg') }}" alt="home-image" />
+        </div>
+      </div>
+
+      <div class="applications">
+        <h1>AI-Powered Music Therapy: Transforming Your Experience</h1>
+        <ul>
+          <li>
+            <img src="{{ url_for('static', filename='assets/images/applications1.png') }}" />
+            <p>Mood Boosting Music for Mental Wellness</p>
+          </li>
+          <li>
+            <img src="{{ url_for('static', filename='assets/images/applications2.png') }}" />
+            <p>Smart Soundscapes for Focus & Productivity</p>
+          </li>
+          <li>
+            <img src="{{ url_for('static', filename='assets/images/applications3.png') }}" />
+            <p>Dynamic Beats for Fitness & Motivation</p>
+          </li>
+          <li>
+            <img src="{{ url_for('static', filename='assets/images/applications4.png') }}" />
+            <p>Soothing Melodies for Relaxation & Sleep</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="Product-Page">
+      <div id="knowhow">
+        <div class="steps">
+          <h1>How it works</h1>
+          <h2>Experience Music like never before</h2>
+
+          <ul>
+            <li>
+              <img src="{{ url_for('static', filename='assets/images/step1.svg') }}" alt="step1" />
+              <p>Create your account or jump right in!</p>
+            </li>
+
+            <li>
+              <img src="{{ url_for('static', filename='assets/images/step2.svg') }}" alt="step2" /> Allow your
+              camera to tune into your emotions.
+            </li>
+
+            <li>
+              <img src="{{ url_for('static', filename='assets/images/step3.svg') }}" alt="step3" /> Our AI reads
+              your facial expressions in real-time.
+            </li>
+
+            <li>
+              <img src="{{ url_for('static', filename='assets/images/step4.svg') }}" alt="step4" /> It observes your
+              surroundings for deeper context.
+            </li>
+
+            <li>
+              <img src="{{ url_for('static', filename='assets/images/step5.svg') }}" alt="step5" /> The system
+              understands your mood and environment.
+            </li>
+
+            <li>
+              <img src="{{ url_for('static', filename='assets/images/step6.svg') }}" alt="step6" /> Enjoy music
+              tailored to your emotions instantly!
+            </li>
+
+            <li>
+              <img src="{{ url_for('static', filename='assets/images/step7.svg') }}" alt="step7" /> Love what you
+              hear? Save it for later!
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      </section>
+
+    <section id="About-Page">
+      <div id="aboutproject">
+        <div class="teamimg"><img src="{{ url_for('static', filename='assets/images/teamimg3d.svg') }}" /></div>
+
+        <h1>About the Project</h1>
+      </div>
+
+      <div id="team">
+        <div class="vertical-text">OUR TEAM</div>
+
+        <div class="teammembers">
+          <div class="member1">
+            <div class="character">
+              <img src="{{ url_for('static', filename='assets/images/divyanshu3d.png') }}" alt="3D Character" />
+            </div>
+            <div class="circle1">
+              <img src="{{ url_for('static', filename='assets/images/member1.jpg') }}" alt="member1" />
+            </div>
+            <div class="rectangle1">
+              <h2>Divyanshu Rajoria</h2>
+              <p>About</p>
+            </div>
+          </div>
+
+          <div class="member2">
+            <div class="character">
+              <img src="{{ url_for('static', filename='assets/images/nikita3d.png') }}" alt="3D Character" />
+            </div>
+            <div class="circle2">
+              <img src="{{ url_for('static', filename='assets/images/member2.jpg') }}" alt="member2" />
+            </div>
+            <div class="rectangle2">
+              <h2>Nikita Chaudhary</h2>
+              <p>About</p>
+            </div>
+          </div>
+
+          <div class="member3">
+            <div class="character">
+              <img src="{{ url_for('static', filename='assets/images/shiven3d.png') }}" alt="3D Character" />
+            </div>
+            <div class="circle3">
+              <img src="{{ url_for('static', filename='assets/images/member3.png') }}" alt="member3" />
+            </div>
+            <div class="rectangle3">
+              <h2>Shiven Rastogi</h2>
+              <p>About</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="proname"><h1>MELOS-MENTIS</h1></div>
+      <div class="socialmedia">
+        <a href="#"
+          ><img src="{{ url_for('static', filename='assets/images/github.svg') }}" alt="github" /> Github</a
+        >
+      </div>
+      <div class="footerabout">
+        <ul>
+          <h1>About</h1>
+          <li><a href="#Home-Page">Home</a></li>
+          <li><a href="#Product-Page">Product</a></li>
+          <li><a href="#About-Page">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+
+        <ul>
+          <h1>Information</h1>
+          <li><a href="#Product-Page">How it works</a></li>
+          <li><a href="#">Github</a></li>
+          <li><a href="#">More</a></li>
+        </ul>
+
+        <ul>
+          <h1>Team</h1>
+          <li>
+            <a href="#"><img src="{{ url_for('static', filename='assets/images/linkedin.svg') }}" />id1</a>
+          </li>
+          <li>
+            <a href="#"><img src="{{ url_for('static', filename='assets/images/linkedin.svg') }}" />id1</a>
+          </li>
+          <li>
+            <a href="#"><img src="{{ url_for('static', filename='assets/images/linkedin.svg') }}" />id1</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <div id="authModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div id="loginForm" class="form-container active">
+          <h2>Login</h2>
+          <form action="/login" method="POST">
+            <input type="hidden" name="form_type" value="login">
+            <input type="email" placeholder="Email" name="email" required /><br /><br />
+            <input
+              type="password"
+              placeholder="Password"
+              name = "password"
+              required
+            /><br /><br />
+            <button type="submit">Login</button><br /><br />
+          </form>
+          <a onclick="toggleForms()">Don't have an account? Sign Up</a>
+
+          <img src="{{ url_for('static', filename='assets/images/loginpagegirl.png') }}" alt="girl-image" />
+        </div>
+
+        <div id="signupForm" class="form-container">
+          <h2>Sign Up</h2>
+          <form action="/signup" method="POST">
+            <input type="text" name="username" placeholder="Username" required/><br/><br/>
+            <input type="email" name="email" placeholder="Email" required/><br/><br/>
+            <input type="password" name="password" placeholder="Password" required/></br></br>
+            <button type="submit">Sign Up</button>
+        </form>
+          <br /><br />
+          <a onclick="toggleForms()">Already have an account? Login</a>
+
+          <img src="{{ url_for('static', filename='assets/images/signuppagegirl.png') }}" alt="girl-image" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+        // a scroll-based active navbar
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links li a");
+
+    function changeActiveSection() {
+        let currentSection = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const sectionHeight = section.clientHeight;
+
+            if (sectionTop <= window.innerHeight / 2 && sectionTop + sectionHeight > 0) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(currentSection)) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", changeActiveSection);
+    changeActiveSection();
+});
+
+
+// js for login signup /
+document.getElementById('getStarted').addEventListener('click', function () {
+    document.getElementById('authModal').style.display = 'flex';
+});
+
+document.querySelector('.close').addEventListener('click', function () {
+    document.getElementById('authModal').style.display = 'none';
+});
+
+function toggleForms() {
+    document.getElementById('loginForm').classList.toggle('active');
+    document.getElementById('signupForm').classList.toggle('active');
+}
+    </script>
+  </body>
+</html>
