@@ -2,176 +2,103 @@
 <html>
 <head>
   <title>Real-Time Emotion Detection</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+  <link rel="icon" type="image/png" href="static/assets/images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class='light x1'></div>
+  <div class='light x2'></div>
+  <div class='light x3'></div>
+  <div class='light x4'></div>
+  <div class='light x5'></div>
+  <div class='light x6'></div>
+  <div class='light x7'></div>
+  <div class='light x8'></div>
+  <div class='light x9'></div>
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+  <div class="container">
+    <div class="main-content">
+      <div class="main-content-inner">
+        <h1>Real-Time Emotion & Context-Based Detection</h1>
+        <img src="{{ url_for('video') }}" width="640" height="480">
+        <br>
+        <button id="captureBtn" onclick="startCapture()">Start 30s Capture</button>
+        <div id="message-box"></div>
+        <div id="emotion-box" class="result-box"></div>
+        <div id="object-box" class="result-box"></div>
+        <div style="margin-top: 10px; text-align: center;">
+          <button onclick="startMusicTherapy()" style="padding: 8px 16px; font-size: 15px;">Start Music Therapy</button>
+        </div>
+        <div id="audio-container"></div>
+      </div>
+    </div>
 
-    .main-content {
-      flex: 1;
-      padding: 20px;
-      text-align: center;
-    }
+<div class="chatbot-panel">
+  <div class="chatbot-intro" id="chatbot-intro">
+    <img src="static\assets\images\botcute.png" alt="Chatbot" class="chatbot-icon">
+    <h3>Welcome to AI Doc-Bot</h3>
+    <p>I can help you understand your emotions and suggest activities.</p>
+    <button onclick="startChat()" class="start-chat-btn">Let's Start</button>
+  </div>
+  
+  <div class="chatbot-interface" id="chatbot-interface" style="display:none;">
+    <div class="chatbot-header">Chat with AI Doc-Bot!</div>
+    <div class="chatbot-body" id="chat-body"></div>
+    <div class="chatbot-input">
+      <input type="text" id="chat-input" placeholder="Type a message..." onkeydown="if(event.key === 'Enter') sendMessage()">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
+  </div>
 
-    h1 {
-      margin-top: 30px;
-    }
-
-    img {
-      border: 2px solid #555;
-      margin-top: 20px;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #message-box {
-      margin: 20px auto;
-      padding: 10px 20px;
-      border-radius: 5px;
-      background-color: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
-      width: fit-content;
-      display: none;
-    }
-
-    .result-box {
-      background: #fff;
-      text-align: left;
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      max-width: 80%;
-      white-space: pre-wrap;
-    }
-
-    /* Chatbot Panel */
-    .chatbot-panel {
-      width: 300px;
-      background: #fff;
-      border-left: 1px solid #ccc;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 999;
-    }
-
-    .chatbot-header {
-      padding: 15px;
-      background: #4CAF50;
-      color: white;
-      text-align: center;
-      font-size: 18px;
-    }
-
-    .chatbot-body {
-      flex: 1;
-      padding: 10px;
-      overflow-y: auto;
-    }
-
-    .chatbot-input {
-      display: flex;
-      padding: 10px;
-      border-top: 1px solid #ccc;
-    }
-
-    .chatbot-input input {
-      flex: 1;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .chatbot-input button {
-      margin-left: 5px;
-      padding: 8px 12px;
-      background: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .chat-message {
-      margin: 5px 0;
-      padding: 8px;
-      border-radius: 10px;
-      max-width: 80%;
-    }
-
-    .user-message {
-      background: #dcf8c6;
-      align-self: flex-end;
-    }
-
-    .bot-message {
-      background: #e6e6e6;
-      align-self: flex-start;
-    }
-  </style>
   <script>
     async function startCapture() {
       const button = document.getElementById('captureBtn');
       const messageBox = document.getElementById('message-box');
       const emotionBox = document.getElementById('emotion-box');
       const objectBox = document.getElementById('object-box');
-
+    
+      messageBox.style.display = "none";
+      emotionBox.style.display = "none";
+      objectBox.style.display = "none";
+    
       button.disabled = true;
       button.innerText = "Capturing (30s)...";
-      messageBox.style.display = "none";
-      emotionBox.innerHTML = "";
-      objectBox.innerHTML = "";
-
+    
       try {
         const response = await fetch('/capture');
         const result = await response.json();
-
+    
         button.innerText = "Start 30s Capture";
         button.disabled = false;
-
-        messageBox.innerText = result.message;
-        messageBox.style.display = "block";
-
-        emotionBox.innerHTML = result.emotions.length > 0
-          ? "<strong>Detected Emotions:</strong><br>" + result.emotions.join(', ')
-          : "<strong>Detected Emotions:</strong> None";
-
-        objectBox.innerHTML = result.objects.length > 0
-          ? "<strong>Detected Objects:</strong><br>" + result.objects.join(', ')
-          : "<strong>Detected Objects:</strong> None";
-
+    
+        if (result.message) {
+          messageBox.innerText = result.message;
+          messageBox.style.display = "block";
+        }
+    
+        if (result.emotions && result.emotions.length > 0) {
+          emotionBox.innerHTML = "<strong>Detected Emotions:</strong><br>" + result.emotions.join(', ');
+          emotionBox.style.display = "inline-block";
+        }
+    
+        if (result.objects && result.objects.length > 0) {
+          objectBox.innerHTML = "<strong>Detected Objects:</strong><br>" + result.objects.join(', ');
+          objectBox.style.display = "inline-block";
+        }
+    
       } catch (error) {
         console.error("Error:", error);
-        messageBox.innerText = "An error occurred.";
+        messageBox.innerText = "An error occurred during capture.";
         messageBox.style.display = "block";
         button.innerText = "Start 30s Capture";
         button.disabled = false;
       }
     }
-
+    
+    
     function startMusicTherapy() {
       fetch('/start_music_therapy', {
         method: 'POST'
@@ -194,18 +121,32 @@
       });
     }
 
+    function startChat() {
+      document.getElementById('chatbot-intro').style.display = 'none';
+      
+      document.getElementById('chatbot-interface').style.display = 'flex';
+      
+      const chatBody = document.getElementById('chat-body');
+      chatBody.innerHTML += `
+        <div class="chat-message bot-message">
+          <strong>AI Assistant:</strong> Hello! I'm here to help you understand your emotions. 
+          How are you feeling today?
+        </div>
+      `;
+      
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+    
     function sendMessage() {
       const input = document.getElementById("chat-input");
       const chatBody = document.getElementById("chat-body");
       const userMessage = input.value.trim();
-  
+    
       if (!userMessage) return;
-  
-      // Append user message to chat
-      chatBody.innerHTML += `<div class="chat-message user"><strong>You:</strong> ${userMessage}</div>`;
+    
+      chatBody.innerHTML += `<div class="chat-message user-message"><strong>You:</strong> ${userMessage}</div>`;
       input.value = "";
-  
-      // Send POST request to Flask backend
+    
       fetch("/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -214,42 +155,16 @@
         .then(response => response.json())
         .then(data => {
           const botMessage = data.response;
-          chatBody.innerHTML += `<div class="chat-message bot"><strong>Bot:</strong> ${botMessage}</div>`;
+          chatBody.innerHTML += `<div class="chat-message bot-message"><strong>Bot:</strong> ${botMessage}</div>`;
           chatBody.scrollTop = chatBody.scrollHeight;
         })
         .catch(error => {
           console.error("Error:", error);
-          chatBody.innerHTML += `<div class="chat-message error"><strong>Error:</strong> Failed to get response</div>`;
+          chatBody.innerHTML += `<div class="chat-message" style="color: #ff6b6b;"><strong>Error:</strong> Failed to get response</div>`;
         });
     }
-  </script>
-</head>
-<body>
-  <div class="container">
-    <div class="main-content">
-      <h1>😊 Real-Time Emotion & Context-Based Detection</h1>
-      <img src="{{ url_for('video') }}" width="720" height="540">
-      <br>
-      <button id="captureBtn" onclick="startCapture()">Start 30s Capture</button>
-      <div id="message-box"></div>
-      <div id="emotion-box" class="result-box"></div>
-      <div id="object-box" class="result-box"></div>
-      <div style="margin-top: 20px; text-align: center;">
-        <button onclick="startMusicTherapy()" style="padding: 10px 20px; font-size: 16px;">Start Music Therapy</button>
-      </div>
-    
-      <div id="audio-container" style="margin-top: 20px; text-align: center;"></div>
-    </div>
 
-    <!-- Chatbot Panel -->
-    <div class="chatbot-panel">
-      <div class="chatbot-header">Chat with AI</div>
-      <div class="chatbot-body" id="chat-body"></div>
-      <div class="chatbot-input">
-        <input type="text" id="chat-input" placeholder="Type a message..." onkeydown="if(event.key === 'Enter') sendMessage()">
-        <button onclick="sendMessage()">Send</button>
-      </div>
-    </div>
-  </div>
+
+  </script>
 </body>
 </html>

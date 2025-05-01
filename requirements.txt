@@ -9,3 +9,4 @@ fal_client
 requests
 flask_pymongo
 flask_session
+ultralytics

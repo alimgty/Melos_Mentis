@@ -14,16 +14,19 @@
         <li><a href="#Home-Page" class="nav-link active">Home</a></li>
         <li><a href="#Product-Page" class="nav-link">Product</a></li>
         <li><a href="#About-Page" class="nav-link">About us</a></li>
-        <li>
-          <a href="#" class="icon"
-            ><img src="{{ url_for('static', filename='assets/images/notifyicon.svg') }}"
-          /></a>
+        <li class="notification-container">
+          <a href="#" class="icon" id="notifyIcon">
+            <img src="{{ url_for('static', filename='assets/images/notifyicon.svg') }}" />
+          </a>
+          <div class="notification-popup" id="notificationPopup">
+            <p>No new notifications</p>
+          </div>
         </li>
         <li>
-          <a href="#" class="icon"
-            ><img src="{{ url_for('static', filename='assets/images/profileicon.svg') }}"
-          /></a>
-        </li>
+          <a href="#" class="icon" id="profileIcon">
+            <img src="{{ url_for('static', filename='assets/images/profileicon.svg') }}" />
+          </a>
+        </li>        
       </ul>
     </div>
 
@@ -117,10 +120,19 @@
         <div class="teamimg"><img src="{{ url_for('static', filename='assets/images/teamimg3d.svg') }}" /></div>
 
         <h1>About the Project</h1>
+        <p>
+          This project presents an AI-powered music therapy system that detects users' emotions and environmental context in real-time to generate personalized therapeutic music. Leveraging deep learning models like VGG16 for facial emotion recognition and YOLOv5s for context detection, the system ensures that each music piece is emotionally aligned with the user's current state. It also integrates a RAG-based AI chatbot, built with Mistral 7B, to offer interactive, empathetic conversations that further enhance emotional support. The backend is built using Flask and FastAPI for modularity, while MongoDB manages user authentication and personalization. A responsive and intuitive frontend enables seamless real-time interaction. By combining music, emotion recognition, and AI-driven dialogue, this platform offers an innovative solution for mental wellness, aiming to reduce stress and improve emotional stability through dynamic, adaptive therapy sessions.
+        </p>       
       </div>
 
       <div id="team">
         <div class="vertical-text">OUR TEAM</div>
+        
+        <div class="character1">
+          <img src="{{ url_for('static', filename='assets/images/proimg.png') }}" alt="3D Character" />
+          <h1>Mr. Rick Chaterjee</h1></br></br>
+          <h1>     [Mentor]</h1>
+        </div>
 
         <div class="teammembers">
           <div class="member1">
@@ -128,11 +140,11 @@
               <img src="{{ url_for('static', filename='assets/images/divyanshu3d.png') }}" alt="3D Character" />
             </div>
             <div class="circle1">
-              <img src="{{ url_for('static', filename='assets/images/member1.jpg') }}" alt="member1" />
+              
             </div>
             <div class="rectangle1">
               <h2>Divyanshu Rajoria</h2>
-              <p>About</p>
+              <p>Role: Backend & AI Engineer</p>
             </div>
           </div>
 
@@ -141,11 +153,11 @@
               <img src="{{ url_for('static', filename='assets/images/nikita3d.png') }}" alt="3D Character" />
             </div>
             <div class="circle2">
-              <img src="{{ url_for('static', filename='assets/images/member2.jpg') }}" alt="member2" />
+              
             </div>
             <div class="rectangle2">
               <h2>Nikita Chaudhary</h2>
-              <p>About</p>
+              <p>Role: Frontend & AI Engineer</p>
             </div>
           </div>
 
@@ -154,11 +166,10 @@
               <img src="{{ url_for('static', filename='assets/images/shiven3d.png') }}" alt="3D Character" />
             </div>
             <div class="circle3">
-              <img src="{{ url_for('static', filename='assets/images/member3.png') }}" alt="member3" />
             </div>
             <div class="rectangle3">
               <h2>Shiven Rastogi</h2>
-              <p>About</p>
+              <p>Role: Backend & AI Engineer</p>
             </div>
           </div>
         </div>
@@ -168,7 +179,7 @@
     <footer>
       <div class="proname"><h1>MELOS-MENTIS</h1></div>
       <div class="socialmedia">
-        <a href="#"
+        <a href="https://github.com/alimgty/Melos_Mentis"
           ><img src="{{ url_for('static', filename='assets/images/github.svg') }}" alt="github" /> Github</a
         >
       </div>
@@ -178,26 +189,24 @@
           <li><a href="#Home-Page">Home</a></li>
           <li><a href="#Product-Page">Product</a></li>
           <li><a href="#About-Page">About Us</a></li>
-          <li><a href="#">Blog</a></li>
         </ul>
 
         <ul>
           <h1>Information</h1>
           <li><a href="#Product-Page">How it works</a></li>
-          <li><a href="#">Github</a></li>
-          <li><a href="#">More</a></li>
+          <li><a href="https://github.com/alimgty/Melos_Mentis">Github</a></li>
         </ul>
 
         <ul>
           <h1>Team</h1>
           <li>
-            <a href="#"><img src="{{ url_for('static', filename='assets/images/linkedin.svg') }}" />id1</a>
+            <a href="https://www.linkedin.com/in/nikita-chaudhary-a9aa71289/"><img src="{{ url_for('static', filename='assets/images/linkedin.svg') }}" />Nikita Chaudhary</a>
           </li>
           <li>
-            <a href="#"><img src="{{ url_for('static', filename='assets/images/linkedin.svg') }}" />id1</a>
+            <a href="https://www.linkedin.com/in/shiven-rastogi-2b7928265/"><img src="{{ url_for('static', filename='assets/images/linkedin.svg') }}" />Shiven Rastogi</a>
           </li>
           <li>
-            <a href="#"><img src="{{ url_for('static', filename='assets/images/linkedin.svg') }}" />id1</a>
+            <a href="https://www.linkedin.com/in/divyanshu-rajoria-9562022a0/"><img src="{{ url_for('static', filename='assets/images/linkedin.svg') }}" />Divyanshu Rajoria</a>
           </li>
         </ul>
       </div>
@@ -242,7 +251,6 @@
     </div>
 
     <script>
-        // a scroll-based active navbar
 
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
@@ -273,7 +281,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// js for login signup /
 document.getElementById('getStarted').addEventListener('click', function () {
     document.getElementById('authModal').style.display = 'flex';
 });
@@ -286,6 +293,42 @@ function toggleForms() {
     document.getElementById('loginForm').classList.toggle('active');
     document.getElementById('signupForm').classList.toggle('active');
 }
+
+
+document.getElementById('getStarted').addEventListener('click', function () {
+  document.getElementById('authModal').style.display = 'flex';
+});
+
+document.getElementById('profileIcon').addEventListener('click', function () {
+  document.getElementById('authModal').style.display = 'flex';
+});
+
+document.querySelector('.close').addEventListener('click', function () {
+  document.getElementById('authModal').style.display = 'none';
+});
+
+function toggleForms() {
+  document.getElementById('loginForm').classList.toggle('active');
+  document.getElementById('signupForm').classList.toggle('active');
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const notifyIcon = document.getElementById("notifyIcon");
+  const popup = document.getElementById("notificationPopup");
+
+  notifyIcon.addEventListener("click", function (e) {
+    e.preventDefault();
+    popup.style.display = popup.style.display === "block" ? "none" : "block";
+  });
+
+
+  document.addEventListener("click", function (event) {
+    if (!notifyIcon.contains(event.target) && !popup.contains(event.target)) {
+      popup.style.display = "none";
+    }
+  });
+});
     </script>
   </body>
 </html>

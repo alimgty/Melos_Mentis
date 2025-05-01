@@ -2,8 +2,8 @@ body{
     padding: 0;
     margin: 0;
     padding-top: 5vh;
+    overflow-x: hidden;
 }
-
 
 #navbar {
     display: flex;
@@ -45,8 +45,7 @@ body{
     color: #38482c;
     text-decoration: none;
     font-size: small;
-    /* transition: text-shadow 0.3s ease-in-out; */
-}
+}   
 
 .nav-links {
     margin-left : auto;
@@ -59,7 +58,7 @@ body{
 
 #navbar ul li a:hover,
 #navbar ul li a.nav-links {
-    text-shadow: 0px 4px 6px rgba(0, 146, 10, 0.7); /* Adjust the shadow */
+    text-shadow: 0px 4px 6px rgba(0, 146, 10, 0.7); 
 }
 
 #home {
@@ -78,13 +77,13 @@ body{
 
 #home h1 {
     position: absolute;
-    font-size: clamp(3rem, 7vh, 5rem); /* Adapts to screen size */  
+    font-size: clamp(3rem, 7vh, 5rem); 
     padding: 0;
     margin: 0;
     color: #38482c;
     padding-top: 30vh;
     padding-left: 16vw;
-    text-shadow: 4px 2px 4px rgba(130, 150, 114, 10); /* Adjust the shadow */
+    text-shadow: 4px 2px 4px rgba(130, 150, 114, 10); 
 }
 
 #home p {
@@ -98,7 +97,6 @@ body{
 }
 
 #home button {
-    /* position: absolute; */
     padding: 10px 20px;
     margin-top: 60vh;
     margin-left: 3vw;
@@ -110,7 +108,7 @@ body{
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    box-shadow: 6px 6px 4px rgba(130, 150, 114, 10); /* Adjust the shadow */
+    box-shadow: 6px 6px 4px rgba(130, 150, 114, 10); 
 }
 
 #home .home-image img{
@@ -171,7 +169,6 @@ body{
     list-style: none;
     padding: 0;
     margin: 20px 0;
-    /* border-bottom: 2px solid #ccc; */
     padding-bottom: 10px;
 }
 
@@ -203,7 +200,6 @@ body{
     color: #666;
 }
 
-/* Add vertical line between items */
 .applications li:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -299,13 +295,30 @@ body{
     align-items: center;
     justify-content: center;
     gap: 5vw;
-    margin-top: 10vh;
+    margin-top: 3vh;
+    margin-left: 17vw;
+}
+
+.character1 img {
+    position: absolute;
+    margin-top: 4px; 
+    left: 70px; 
+    width: auto; 
+    height: 370px;
+}
+
+.character1 h1 {
+    position: absolute;
+    font-size: 2rem;
+    color: #38482c;
+    margin-top: 47vh;
+    margin-left: -45vw;
 }
 
 .vertical-text {
     position: absolute;
     top: 40vh;
-    left: 3vw; /* Adjust as needed */
+    left: 3vw; 
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: left bottom;
     font-size: 24px;
@@ -314,7 +327,7 @@ body{
     color: #38482c;
     font-family: Georgia, 'Times New Roman', Times, serif;
     white-space: nowrap;
-    text-shadow: 4px 2px 4px rgba(130, 150, 114, 10); /* Adjust the shadow */
+    text-shadow: 4px 2px 4px rgba(130, 150, 114, 10); 
 }
 
 #team .member1, .member2, .member3 {
@@ -327,9 +340,9 @@ body{
 
 .character {
     position: absolute;
-    margin-top: -38px; /* Move upwards */
-    left: -22px; /* Move left */
-    width: 150px; /* Adjust size */
+    margin-top: -38px; 
+    left: -22px; 
+    width: 150px; 
     height: auto;
 }
 
@@ -354,9 +367,9 @@ body{
     align-items: center;
 }
 
-.circle1 { background-color: orange; }
-.circle2 { background-color: lightblue; }
-.circle3 { background-color: lightgreen; }
+.circle1 {  }
+.circle2 {  }
+.circle3 {  }
 
 #team .rectangle1, .rectangle2, .rectangle3 {
     position: relative;
@@ -371,6 +384,10 @@ body{
     border-radius: 10px;
     padding: 15px;
     text-align: center;
+}
+
+#team .rectangle1 h2, .rectangle2 h2, .rectangle3 h2 {
+    margin-top: -15px;
 }
 
 .rectangle1 { border: 2px solid orange; }
@@ -404,6 +421,19 @@ body{
     width: 100%;
 }
 
+#aboutproject p {
+    position: absolute;
+    top: 7vh;
+    left: 3vw;
+    width: 62vw;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #f4f3f1;
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 footer {
     position: relative;
     background-color:#829672;
@@ -435,8 +465,8 @@ footer .socialmedia a{
 
 .footerabout {
     display: flex;
-    justify-content: flex-end; /* Aligns to the right */
-    gap: 50px; /* Space between lists */
+    justify-content: flex-end; 
+    gap: 50px; 
     color: rgb(5, 5, 5);
     margin-right: 10vw;
 }
@@ -471,7 +501,6 @@ footer .socialmedia a{
     height: 16px;
 }
 
-/* css for navbar js */
 .nav-links li a {
     position: relative;
     text-decoration: none;
@@ -483,9 +512,6 @@ footer .socialmedia a{
     border-bottom: 3px solid #38482c;
     transition: border-bottom 0.3s ease-in-out;
 }
-
-
-/* css for login/signup forms */
 
 .modal {
     display: none;
@@ -599,7 +625,7 @@ footer .socialmedia a{
     color: white;
     border: none;
     padding: 10px 20px;
-    margin-top: 20vh; /* This is likely the culprit */
+    margin-top: 20vh; 
     margin-left: 5vw;
     border-radius: 5px;
     cursor: pointer;
@@ -624,3 +650,27 @@ footer .socialmedia a{
     margin-top: -27vh;
     margin-left: 28vw;
 }
+
+.notification-container {
+    position: relative;
+  }
+  
+  .notification-popup {
+    display: none;
+    position: absolute;
+    top: 40px; 
+    right: 0;
+    background-color: white;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 10px;
+  }
+  
+  .notification-popup p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+  }  

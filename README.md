@@ -1,129 +1,97 @@
-📷 Emotion Detection using VGG16 and FER2013 Dataset  
+# 🎵 Melos Mentis: AI-Powered Music Therapy 🎶
 
-This project implements Emotion Detection using a fine-tuned version of the VGG16 deep learning model. The model is trained and validated on the FER2013 dataset and is capable of recognizing facial emotions from images with high accuracy.  
+**Enhancing emotional well-being through real-time AI-driven music therapy based on emotion and context detection.**
 
+---
 
+## 📘 Overview
 
-🔍 Overview  
+**Melos Mentis** is a smart therapeutic system that uses real-time facial emotion recognition and environmental context analysis to generate adaptive, personalized music. It integrates custom deep learning models and a conversational AI chatbot to create immersive and emotionally aware therapy sessions.
 
-The project leverages Transfer Learning, utilizing the pretrained VGG16 model on ImageNet and fine-tuning it with the FER2013 dataset. The goal is to classify facial expressions into one of the seven emotion categories:  
+---
 
-Angry 😠
+## 🖼️ Screenshots
 
-Disgust 🤢
+### Homepage
+![Homepage](screenshots/Landing_page.png)
 
-Fear 😨
+### Our Team
+![Emotion Detection](screenshots/Team.png)
 
-Happy 😄
+### Dashboard
+![Chatbot](screenshots/Dashbaord.png)
 
-Sad 😢
+---
 
-Surprise 😲
+## 📑 Final Progress Report
 
-Neutral 😐
+📄 View our complete report here:  
+[🧾 Melos-Mentis-Final-Progress-Report.pdf](Melos-Mentis-Final-Progress-Report.pdf)
 
+---
 
+## 🚀 Features
 
-🧠 Model Architecture
+- 🎭 **Emotion Detection** – Custom VGG16 model trained on FER2013
+- 🌆 **Context Awareness** – Real-time object detection using YOLOv5s
+- 🎧 **AI-Generated Music** – Emotion-aligned music created using Fal.AI
+- 🤖 **Therapeutic Chatbot** – Empathetic AI powered by Mistral 7B with RAG
+- 🌐 **Full-stack Integration** – Flask, FastAPI, MongoDB, HTML/CSS/JS
 
-Base Model: VGG16 (pretrained on ImageNet)
+---
 
+## 🧠 System Architecture
 
+1. **Input**: User emotion via webcam & environmental data via camera
+2. **Processing**:
+   - Emotion classification (VGG16)
+   - Context detection (YOLOv5s)
+   - Prompt generation (Mistral 7B)
+3. **Output**:
+   - Emotionally intelligent conversation
+   - Custom music playback (Fal.AI)
+   - Visual feedback via web interface
 
-Modifications:
+---
 
-Removed top layers of original VGG16
+## 🛠 Tech Stack
 
-Added custom fully connected layers for emotion classification
+| Layer       | Tools/Frameworks                        |
+|-------------|-----------------------------------------|
+| Frontend    | HTML, CSS, JavaScript                   |
+| Backend     | Flask, FastAPI                          |
+| AI Models   | VGG16, YOLOv5s, Mistral 7B (RAG)        |
+| Music Gen.  | Fal.AI                                  |
+| Database    | MongoDB                                 |
+| Dev Tools   | VS Code, Git, GitHub                    |
 
-Fine-tuned the last few convolutional blocks for domain adaptation
+---
 
+## 📈 Milestones Achieved
 
+- ✅ Emotion & object detection with >90% accuracy
+- ✅ Real-time music generation & emotion adaptation
+- ✅ Fully integrated chatbot therapist
+- ✅ Seamless web interface with login, detection, and interaction
+- ✅ User personalization with MongoDB
 
-📊 Dataset
+---
 
-FER2013 dataset:
+## 🔮 Future Scope
 
-Source: Kaggle
+- 📱 Mobile version
+- 🗣️ Voice-based input
+- 🎨 Dynamic visual effects
+- 📊 Advanced user analytics dashboard
 
-Contains grayscale 48x48 pixel images
+---
 
-Labeled into 7 emotion categories
+## 👨‍💻 Contributors
 
+- **Nikita Chaudhary** – [GitHub](https://github.com/nikitac22)  
+- **Shiven Rastogi**  
+- **Divyanshu Rajoria**
 
+---
 
-🛠️ Installation
-
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/0Nikki0/EmotionDetection.git
-cd EmotionDetection
-Create and activate a virtual environment (optional but recommended):
-
-bash
-Copy
-Edit
-python -m venv venv
-source venv/bin/activate  # for Unix
-venv\Scripts\activate     # for Windows
-Install dependencies:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the application:
-
-bash
-Copy
-Edit
-python app.py
-
-
-
-🌐 Web Application
-The Flask web app allows users to use a webcam to detect facial emotions in real-time.
-
-
-
-📓 Colab Notebook
-
-You can find the full model training and experimentation in the Google Colab notebook:
-🔗 Google Colab - [VGG16 Fine-tuning on FER2013](https://colab.research.google.com/drive/1kOieLMeOLPIep9DZaSlC90Zwq5Mng11p?usp=sharing)
-
-
-
-🧪 Results
-
-The fine-tuned model achieved high validation accuracy and showed good generalization on unseen samples. You can try it on your own images via the web interface.
-
-
-
-✨ Features
-
-Transfer learning using pretrained VGG16
-
-Emotion classification into 7 categories
-
-Real-time detection via webcam or static images
-
-Lightweight Flask-based web interface
-
-
-
-🛠️ Technologies Used
-
-Python
-
-TensorFlow / Keras
-
-OpenCV
-
-Flask
-
-HTML/CSS (for frontend)
-
-Google Colab
+> ⭐ _If you like our project, please give it a star!_

@@ -1,12 +1,8 @@
 {
   "emotions": [
-    "Sad",
-    "Surprise"
+    "Sad"
   ],
   "objects": [
-    "wine glass",
-    "person",
-    "cup",
-    "cell phone"
+    "person"
   ]
 }
