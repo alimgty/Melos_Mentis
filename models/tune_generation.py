@@ -12,7 +12,7 @@ sys.path.append(os.path.abspath("venv/Lib/site-packages"))
 import fal_client
 
 # Set Fal.ai API Key
-os.environ["FAL_KEY"] = "8cd74779-263d-408c-b570-9519d9ef9c6a:f3e53e5c191e04e7bb630939787743c4"
+os.environ["FAL_KEY"] = "24f34bb0-4862-4649-83a1-22d70dc1d4e8:2ee4d1b4b186313acd5590125347de82"
 
 # Load the generated music prompt from 'static' folder
 def load_music_prompt():

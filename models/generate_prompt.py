@@ -78,7 +78,7 @@ import urllib.error
 print("generate_prompt.py is using:", sys.executable)
 
 # Mistral AI API details
-MISTRAL_API_KEY = "mRu9GUqTjWOZa7eyuramuqkU20nDuk7U"  # Replace with your actual API key
+MISTRAL_API_KEY = "3l3ryutp7qao9FPu6zRcHhSQirGrATtg"  # Replace with your actual API key
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"  # Correct API URL
 
 # Load emotion and context from the JSON file in 'static' folder
