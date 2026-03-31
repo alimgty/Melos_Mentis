@@ -1,0 +1,13 @@
+{
+  "emotions": [
+    "Happy",
+    "Sad",
+    "Surprise"
+  ],
+  "objects": [
+    "baseball bat",
+    "cell phone",
+    "person",
+    "tie"
+  ]
+}

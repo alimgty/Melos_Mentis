@@ -1,0 +1,12 @@
+flask
+opencv-python
+tensorflow
+opencv-python
+torch
+pillow
+pandas
+fal_client
+requests
+flask_pymongo
+flask_session
+ultralytics
